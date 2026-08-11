@@ -77,3 +77,134 @@ i thought of something. anything solved with recursion can be solved iteratively
 **Yes, you are 100% correct!** That is a brilliant realization to hit upon as a fresher.
 
 In computer science, this is a fundamental law: **Any problem that can be solved using recursion can also be solved iteratively using an explicit stack.** In fact, it goes both ways—they are completely interchangeable in terms of what problems they can solve. Here is exactly why your thought is spot-on, explained simply.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+anyth
+
+dhyan s dekh y netre kya batana chahri
+
+ek bar firse betha maa baap ko dhoka deke
+in aksharoke samandar p m nauka leke
+bhuchal y man ka lejara jaha p y toofan h
+ab khali lautu n gahr lautunga to tofa leke
+
+hu bhi busy
+kuch bate kehni joki kehne ki ni
+likhne k le betha mera thanda y kaleja pada
+jab awaj koi meri sunne hi ni wala
+mujhe hoti bt, esi baate soch k, bate m hazar bhi likhdu y shad khoj k
+parvah kabhi hogi hi ni, kisiko bhi thodi si bhi
+bhale har waqt pass rkhu m shabd kosh y
+
+00.42
+koshish hi to bs m kare jara
+mere man m bhi or bas m ni h dhushmani nibhana
+or koshish ki y shazish h ki trophy karu hasil m
+pr isne waqt khoti kara sara
+
+pura sukha, pani piya ni, hu pyasa
+hu m bhukha, muh me ghusa ni, subah s, nivala
+bs h khaya keval tana, ghr p, kya hota h khana
+
+na kala dhaga
+na kalava
+bs gaane p m
+bs kalam h pass is lavzo alfazo ki kala  p  m nyochavar
+
+sadhgi s nishana sadha
+nishane p y gana daga
+challenge h or pehnu n m kala dhaga
+koi nazar mila ni pata
+kyoki kala meri bhari
+kalam kagaz h hathiyar hi
+tujhe agla nishana tana
+beta mat kr hoshiyari
+hath kya tu nazar laga k dikha
+h y challenge
+or hn beta kabhi pehnu n m kala dhaga
+
+pr isne hi to sachme hi (vo) waqt khoti kara sara
+
+kala dhaga
+kalava
+
+
+sehmati deta hu m sehne kele ni
+kash hota bag
+kash hota bag mujhe kimon ache true bande lage ajtk kisko ache
+akele mera chill y heart h pr tum cool mano unko jo jake disco nache
+
+senorita jab sehen hora ni tha
+seh mat hi, de tu teri sehmati
+tujhe kisne krne sehen ni kha
+
+kisko haq h
+
+wait us samay fekta album rags to riches
+similarity
+
+meri lipi
+
+sochu bachpn s h bs dhoka dia
+sochu ki m hu bhot bura
+
+
+dikhega dola bhi
+rato ko sota
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ab kya bar banau
+m bar bar au
+pr bhar jau
+
+betha akela hu m
+kehna chahta lekin kuch na keh pau m
+sehta hu m sehta rehta betha betha lekin beta kabhi ek na asu behta esa sehma rehta hu m
+
+kese samjhau y ghehraiyo ko
+firbhi kehra hu m
+firbhi kehra hu m
+
+kya tu samjrae
+meri bato ko
+kya tu thoda feel kr para h in alfaso ko
+khayalo n mere khud k banake rakha kedi
+gidgida ke bolu khud s plz ab mujhe nikal jane do
+
+unko khiladu kela bhi m
+
+
+@githubpass123
