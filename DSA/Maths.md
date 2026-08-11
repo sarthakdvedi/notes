@@ -55,7 +55,7 @@ Whenever a problem asks you to minimize operations and features:
 ------------------------
 
 
-
+## Ceil / floor -
 
 - Ceil (a / b)   =   (a + b - 1) / b
 - or ->    ceil( (double)a / (double)b  )            (typecast to double, then divide)
@@ -69,7 +69,7 @@ Whenever a problem asks you to minimize operations and features:
 
 -------------
 
-
+## Modular Arithmetic -
 
 - pi = acos(-1.0);   (most accurate pi)
 - 
@@ -85,6 +85,7 @@ Whenever a problem asks you to minimize operations and features:
 
 -----
 
+## Combination -
 
 The sum of combinations of \(n\) elements chosen an odd / even number at a time is ==exactly== **\(2^{n-1}\)**. [[1](https://math.stackexchange.com/questions/1602518/summation-of-even-combinations)]
 
@@ -95,7 +96,7 @@ The sum of combinations of \(n\) elements chosen an odd / even number at a time 
 
 ----
 
-##### Triangle -
+## Triangle Prop-
 If given -> 3 sides,     to find ->  all angles
 use Law of cosine:   cos x = ( a^2 + b^2 - c^2 ) / 2*a*b 
 find x by cos inverse function  ---> acos (  ^"  )               * (180 / pi)   {for radians -> degrees}
@@ -112,7 +113,7 @@ use Law of sines
 
 ------------------
 
-
+## Circular array -
 A **circular array** means the end of the array connects to the beginning of the array. Formally, the next element of `nums[i]` is `nums[(i + 1) % n]` and the previous element of `nums[i]` is `nums[(i - 1 + n) % n]`.
 
 
@@ -121,3 +122,15 @@ A **circular array** means the end of the array connects to the beginning of t
 
 ### Revision-
 - [3102. Minimize Manhattan Distances](https://leetcode.com/problems/minimize-manhattan-distances/) 
+
+---
+
+## Basic formula -
+```cpp
+
+// 1. sum of n digits 
+   int sum = n(n+1) / 2
+   
+// 2. sum from x to x+y
+	int sum = (n / 2) * (start + end);
+```

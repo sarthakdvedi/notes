@@ -23,7 +23,21 @@ delete obj.key
 // or
 delete obj['key']
 ```
+- Ye JavaScript ka ek feature hai jahan hum Square Brackets `[]` ka use karke **dynamic key (naam)** banate hain.
 
+### Copy -
+```js
+const ob2 = {...ob1} // ob1 ki 
+// shallow copy (changes reflect) -> only for nested objects
+// deep copy (real dusri copy) -> for normal values
+```
+
+### 🔄 JavaScript Object Passing Rule -
+JavaScript me jab bhi aap koi object kisi function me pass karte hain, toh wo **by reference** jata hai. Iska matlab us object ki koi nayi copy nahi banti, balki wahi asli object aage travel karta hai.
+
+
+### Override Property -
+- if ek key repeatedly values save kar rhi h to, last wali value override kar degi
 
 ---
 

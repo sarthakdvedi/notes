@@ -87,3 +87,15 @@ To make multi-tenancy work safely on a single database:
 
 
 revision refer: https://www.youtube.com/watch?v=ExnKdgIMabI 
+
+
+---
+
+
+### ## 2. Data Security & Isolation (The Ultimate SaaS Rule)
+
+In a multi-tenant database, the gold standard rule is: **Every major table must have a `tenantId`.** When you write a query to show the Admin Dashboard for _Apollo Hospital_, you want to run: `SELECT * FROM queues WHERE tenantId = 'apollo-id';`
+
+If you remove it, your query becomes a massive, ugly SQL `JOIN`: `SELECT * FROM queues JOIN service_counters ON ... WHERE service_counters.tenantId = 'apollo-id';`
+
+This is not only much slower as your database grows, but if a bug or a missing join happens, _Apollo Hospital_ might accidentally see _Fortis Hospital's_ queues.

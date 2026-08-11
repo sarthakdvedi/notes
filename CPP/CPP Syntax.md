@@ -112,3 +112,20 @@ vector<bool> isPrime;
 isPrime.resize(maxEl+1, false);
 ```
 
+
+---
+
+
+### Tuple -
+```cpp
+using ppi = tuple<int, int, int>; 
+ppi node = {5, 2, 4};
+// Access elements by 0-based index
+int effort = get<0>(node);
+int row = get<1>(node);
+int col = get<2>(node); 
+
+// Modify elements directly
+get<0>(node) = 10;
+auto [effort, r, c] = pq.top();
+```
