@@ -213,3 +213,27 @@ int add(int a, int b = 5){
 
 //NOTE: right to left order is important to assign a default valu
 ```
+
+
+---
+
+
+## Exception Handling -
+
+```cpp
+#include <iostream>
+#include <exception>
+
+try {
+    // Your code here
+}
+catch (const std::exception& e) {
+    // Catches standard exceptions and reads the message
+    std::cout << "Standard exception: " << e.what() << std::endl;
+}
+catch (...) {
+    // Catches anything else (like raw ints or custom types)
+    std::cout << "Unknown non-standard exception caught." << std::endl;
+}
+
+```

@@ -30,6 +30,7 @@ namespace MyApp
 ---
 
 ## 2. Data types
+In C#, _every single type_ ultimate derives from `System.Object`
 
 ```csharp
 int x = 5;
@@ -152,6 +153,13 @@ class Student
 {
     public string name;
     public int rollNo;
+    
+    
+    //constructors can be made private
+  //  - **Factory Methods**: Forces developers to instantiate the class through //specialized static methods rather than direct constructors.
+
+//- **Utility / Static Classes**:
+
 
     // constructor - same idea as cpp
     public Student(string n, int r)
@@ -335,18 +343,27 @@ int y = (int)obj;      // UNBOXING: reference type -> value type (back to stack)
 
 - Performance cost hota h boxing/unboxing me (heap alloc + type check). Interviewers love asking "why is boxing expensive?"
 
+
+### 1. **Why it was used (The "Universal Slot"):**
+Boxing allows a value type (`int`, `float`, `struct`) to fit into any method or collection designed to hold an `object` reference (e.g., legacy `ArrayList` or `Console.WriteLine(object obj)`). It acts as a bridge so a single reference parameter can accept _literally anything_.
+
+SIMPLY -
+ek parameter set kara bas
+and multiple types of data accept kar sakte h
+
+
+### 2. **Why it's not recommended as a pattern:**
+Relying on `object` parameters forces C# to give up compile-time type safety and causes heavy performance penalties (heap allocation + Garbage Collection overhead).
+
+### 3. **How C# Solved This (Generics):**
+In modern C#, you rarely need to box value types manually to pass them around. C# 2.0 introduced **Generics** (`List<T>`, `void MyMethod<T>(T item)`). Generics allow you to pass any data type efficiently **without boxing**, giving you both type safety and performance.
+
+
+**Bottom Line:**
+Boxing is a built-in fallback mechanism so value types can fit into reference-type containers (`object`), but passing arguments as `object` is avoided in modern C# in favor of Generics (`<T>`).
+
 ---
 
-## 13. Nullable types & null handling
-
-```csharp
-int? x = null;              // int can't normally be null, "?" makes it nullable
-int y = x ?? 5;              // null-coalescing: if x is null, y = 5
-string s = null;
-int len = s?.Length ?? 0;    // null-conditional "?." - avoids NullReferenceException
-```
-
----
 
 ## 14. Generics — same idea as cpp templates
 
@@ -368,6 +385,21 @@ T Max<T>(T a, T b) where T : IComparable<T>
 }
 ```
 
+
+---
+
+
+## 13. Nullable types & null handling
+
+```csharp
+int? x = null;              // int can't normally be null, "?" makes it nullable
+int y = x ?? 5;              // null-coalescing: if x is null, y = 5
+
+string s = null;
+int len = s?.Length ?? 0;    // null-conditional "?." - avoids NullReferenceException
+```
+
+
 ---
 
 ## 15. Delegates, Lambdas, Events — commonly asked, no direct cpp equivalent (closest = function pointers/std::function)
@@ -386,6 +418,84 @@ class Button
     public void Click() { OnClick?.Invoke(); }
 }
 ```
+
+
+
+
+
+
+
+
+
+### Delegates & Events — Quick Revision Notes
+
+### 1. Delegates
+It can point to both **static** and **instance** functions.
+
+- **Definition:** A type-safe function pointer or variable that holds a reference to a method with a matching signature (return type and parameters).
+    
+- **When to use:** Used when you need to pass a method as a parameter to another method.
+    
+```csharp
+// 1. Declare delegate matching method signature
+public delegate void Calculator(int x, int y);
+
+// Methods matching the signature
+public static void Add(int a, int b) => Console.WriteLine(a + b);
+public static void Multiply(int a, int b) => Console.WriteLine(a * b);
+
+// 2. Instantiate and invoke
+Calculator calc = new Calculator(Add);
+calc(20, 30); // Output: 50
+```
+
+---
+
+### 2. Multicast Delegates
+
+- **Definition:** A delegate that holds references to multiple methods with the same signature, executing them sequentially in a single invocation.
+    
+- **Mechanism:** Methods are chained using the `+=` operator.
+    
+```csharp
+Calculator calc = Add;
+calc += Multiply; // Chaining another method
+
+calc(20, 30); 
+// Output: 
+// 50  (from Add)
+// 600 (from Multiply)
+```
+
+---
+
+### 3. Anonymous Delegates
+
+- **Definition:** Delegates pointing directly to inline methods defined without an explicit name (anonymous methods).
+
+```csharp
+// Inline method body without declaring a named function
+Calculator calc = delegate(int a, int b) 
+{
+    Console.WriteLine(a + b);
+};
+
+calc(10, 20); // Output: 30
+```
+
+---
+
+### 4. Events vs. Delegates
+
+- **Definition:** An event is a notification mechanism that acts as an encapsulation and security wrapper around a delegate.
+    
+- **Key Differences:**
+    
+    - **Dependency:** An event depends on a delegate and cannot exist without one.
+        
+    - **Security & Encapsulation:** Delegates allow direct external invocation and reassignment. Events restrict external code to subscribing (`+=`) or unsubscribing (`-=`), preventing external callers from resetting or directly invoking the underlying delegate chain.
+
+
 
 ---
 
@@ -408,6 +518,10 @@ var sorted = nums.OrderBy(n => n).ToList();
 ---
 
 ## 17. `==` vs `.Equals()` vs `ReferenceEquals()`
+
+`==` is kind of polymorphed.
+- for value based comparison ----> it acts like `a.Equals(b);`
+- for reference based ----> acts like `ReferenceEquals(ob1,ob2);`
 
 ```csharp
 string a = "hi";
@@ -465,4 +579,59 @@ ReferenceEquals(o1, o2);  // false, explicitly checks if same memory reference
 
 ---
 
-Good luck for tomorrow. Sabse zyada asked cheliye: **value vs reference types**, **virtual/override/sealed**, **abstract vs interface**, **boxing/unboxing**, **properties**, **exception handling**, and a basic **LINQ** one-liner. In agar 6 topics ko confidently bol pao, 80% interview cover ho jaega.
+Good luck for tomorrow. Sabse zyada asked : **value vs reference types**, **virtual/override/sealed**, **abstract vs interface**, **boxing/unboxing**, **properties**, **exception handling**, and a basic **LINQ** one-liner. In agar 6 topics ko confidently bol pao, 80% interview cover ho jaega.
+
+
+
+---
+
+
+
+## String vs StringBuilder -
+string is immutable ( a new string is created with any change )
+StringBuilder can append without creating new string thus saving cost
+
+| **Feature**           | **String**                                                   | **StringBuilder**                                                     |
+| --------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------- |
+| **Mutability**        | **Immutable** (cannot be modified after creation).           | **Mutable** (can be modified in place).                               |
+| **Memory Allocation** | Creates a **new memory instance** every time it is modified. | Modifies the **same memory instance** without allocating new objects. |
+| **Performance**       | Faster/lighter for fixed or single values.                   | Faster/efficient when performing frequent string modifications.       |
+
+```csharp
+string str1 = "Interview";
+str1 = str1 + " Happy"; // Creates a new string instance in memory
+Console.WriteLine(str1); // Output: Interview Happy
+
+
+
+using System.Text;
+
+StringBuilder str2 = new StringBuilder();
+str2.Append("Interview");
+str2.Append(" Happy"); // Modifies the existing instance in memory
+
+Console.WriteLine(str2.ToString()); // Output: Interview Happy
+```
+
+
+---
+
+
+## exception handling
+
+```csharp
+1. we can have only try with finally to close connection
+2. we can have multiple catch blocks --- but only 1 will be executed
+3. Throw ex will change stack trace whereas Throw preserves it whole.
+   
+   try
+{
+    // Your code here
+}
+catch (Exception ex)
+{
+    // 'ex' contains all error data
+    Console.WriteLine($"Error: {ex.Message}");
+}
+
+```
