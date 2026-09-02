@@ -4,6 +4,7 @@
 
 
 - an errorHandler middleware is defined as a middleware with 4 parameter (err,req,res,next)
+  {this is important as ==express contains an exception of calling errorHandler middleware by comparing arguments length with function.length(that gives number of parameters), which is 4 for errors middleware ==}
 
 
 ------------------------

@@ -5,3 +5,21 @@
 
 
 
+---
+
+
+## auto restart server -
+
+```js
+"scripts": {
+  "dev": "nodemon server.js"
+}
+
+to
+
+"scripts": {
+  "dev": "node --watch server.js"
+}
+```
+
+

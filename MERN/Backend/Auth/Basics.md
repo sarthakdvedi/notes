@@ -37,6 +37,27 @@ console.log(req.cookies);
 - create string (aka token) --> jwt.sign()
 - to extract details from string -->  jwt.verify()
 
+---
+
+## Where JWT is stored at client side -
+JSON Web Tokens (JWT) are stored ==on the client side in either **browser cookies**, **localStorage**, or **sessionStorage**==.
+
+- **localStorage:**
+    - Keeps data saved even after the browser closes.
+    - Persists until explicitly cleared by user action or app code.
+    - Vulnerable to Cross-Site Scripting (XSS) attacks if malicious scripts run on the page.
+
+- **sessionStorage:**
+    - Keeps data saved only for the current browser tab or window.
+    - Clears automatically when the tab or window closes.
+    - Also vulnerable to XSS attacks.
+
+- **Cookies (HttpOnly):**
+    - Sent automatically by the browser with every HTTP request to the domain.
+    - Can be marked as `HttpOnly` to block JavaScript access, protecting against XSS theft.
+    - Vulnerable to Cross-Site Request Forgery (CSRF) if proper anti-CSRF defenses are missing.
+
+
 
 ---
 
