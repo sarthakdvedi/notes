@@ -41,7 +41,7 @@ void allinone(TreeNode* root){
 
 
 - binary tree ke lie preorder, postorder jaruri h
-- bst ke lie inorder jaruri h (  **+ inorder stack se kese ye bhi**)
+- bst ke lie inorder jaruri h (  **+ inorder stack se kese hota h - ye bhi**)
 
 
 ### 1. Top Down Approach - (PreOrder)
@@ -85,3 +85,4 @@ void allinone(TreeNode* root){
 
 - [653. Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/) { inorder traversal stack se }
 - [173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/) { ^^ same }
+

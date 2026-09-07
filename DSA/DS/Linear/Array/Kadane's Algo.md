@@ -1,7 +1,16 @@
 
 to find max subarray -
 
-#### Basic kadane idea -> 
+it can be solved using sliding window ( but only if all +ve or -ve )
+{ as mixed integers destroy decision making ability in sliding window approach (whether to move left or right) }
+Without additional constraints (like a target sum or limited subarray length):
+
+- **Max sum with only positives** = Sum of the entire array.
+    
+- **Min sum with only positives** = Smallest single element in the array.
+
+
+### Basic kadane idea -> 
 1. bestEnding (till last idx) + cur_value (at i th idx)
 2. if cur_value is better alone, then move forward with it only
 
@@ -13,8 +22,6 @@ to find max subarray -
 
 update bestEnding (with these two choices on each iteration)
 
-
-snippet ->
 
 ```cpp
 int maxSubArray(vector<int>& nums) {
@@ -35,6 +42,22 @@ int maxSubArray(vector<int>& nums) {
  }
 ```
 
+
+```cpp
+    int maxSubArray(vector<int>& nums) {
+        int n=nums.size(), maxSum=INT_MIN, curSum=0;
+
+        for(int i=0;i<n;i++){
+            curSum = max(curSum + nums[i], nums[i]);
+            maxSum = max(maxSum, curSum);
+        }
+
+        return maxSum;
+    }
+```
+
+
+---
 
 
 examples -

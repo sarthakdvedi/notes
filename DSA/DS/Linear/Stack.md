@@ -34,6 +34,7 @@
 
 
 ## Monotonic (top to bottom) Stack (nge/pge +  nse/pse)
+monotonic  ---mean--->  to keep values in a order { in any data structure }
 
 1. [Online Stock Span - LeetCode](https://leetcode.com/problems/online-stock-span/description/) (pop p dhyan)
 2. [Largest Rectangle in Histogram - LeetCode](https://leetcode.com/problems/largest-rectangle-in-histogram/description/) (optimest approach bad m pdunga)
@@ -43,16 +44,16 @@
 6. [Remove K Digits](https://leetcode.com/problems/remove-k-digits/) (starting k greatest chahiye/ soch -> greatest kab pop honge (store krlenge tab))
    
 ```cpp
-		vector<int>nge(nums.size(),-1);
-        
-        for(int i = n-1; i >= 0; i--){
-            
-            while(!s.empty() && s.top() <= nums[i]) s.pop();
-            
-            if(!s.empty()) nge[i] = s.top();
-            
-            s.push(nums[i]);
-        }
+vector<int>nge(nums.size(),-1);
+
+for(int i = n-1; i >= 0; i--){
+	
+	while(!s.empty() && s.top() <= nums[i]) s.pop();
+	
+	if(!s.empty()) nge[i] = s.top();
+	
+	s.push(nums[i]);
+}
 ```
 
 2. [Trapping Rain Water - LeetCode](https://leetcode.com/problems/trapping-rain-water/)
@@ -69,6 +70,102 @@ saved -
 [Sum of Total Strength of Wizards - LeetCode](https://leetcode.com/problems/sum-of-total-strength-of-wizards/description/)
 [Find Building Where Alice and Bob Can Meet - LeetCode](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
 
+
+---
+
+
+
+## pse -
+```cpp
+    vector<int> prevSmaller(vector<int>& arr) {
+        int n=arr.size();
+        vector<int>pse(n,-1);
+        stack<int>s;
+        
+        for(int i=0;i<n;i++){
+            while(!s.empty() && s.top() >= arr[i]) s.pop();
+            if(!s.empty()) pse[i] = s.top();
+            s.push(arr[i]);   
+        }
+        
+        return pse;
+    }
+```
+
+
+## pge-
+```cpp
+    vector<int> preGreaterEle(vector<int>& arr) {
+        int n=arr.size();
+        vector<int>pse(n,-1);
+        stack<int>s;
+        
+        for(int i=0;i<n;i++){
+            while(!s.empty() && s.top() <= arr[i]) s.pop();
+            if(!s.empty()) pse[i] = s.top();
+            
+            s.push(arr[i]);   
+        }
+        
+        return pse;
+    }
+```
+
+
+## nge-
+```cpp
+    vector<int> nextSmallerEle(vector<int>& arr) {
+        int n=arr.size();
+        vector<int>nge(n,-1);
+        stack<int>s;
+        
+        for(int i=n-1;i>=0;i--){
+            while(!s.empty() && s.top() <= arr[i]) s.pop();
+            if(!s.empty()) nge[i] = s.top();
+        
+            s.push(arr[i]);   
+        }
+        
+        return nge;
+    }
+```
+
+## nse-
+```cpp
+    vector<int> nextLargerElement(vector<int>& arr) {
+        int n=arr.size();
+        vector<int>nse(n,-1);
+        stack<int>s;
+        
+        for(int i=n-1;i>=0;i--){
+            while(!s.empty() && s.top() >= arr[i]) s.pop();
+            if(!s.empty()) nse[i] = s.top();
+        
+            s.push(arr[i]);   
+        }
+        
+        return nse;
+    }
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----
 
 
 #### Recursion x stack -

@@ -1,8 +1,33 @@
 
-## About yourself -
-1. intro + greet + academic background + 8.1 cgpa
-2. languages + tech stack + 2 projects + working on
-3. end - I wish to use my technical knowledge to contribute to a team that works at scale and creates a positive impact on society.
+## Introduction -
+Hello, I’m Sarthak Dwivedi, a final-year Computer Science student at Dronacharya Group of Institutions, Greater Noida.
+
+I would describe myself as someone who enjoys understanding how things work and then building them practically. My primary experience is with the MERN stack, backend development, and AI-assisted development.
+
+One project I’m particularly proud of is an ATS tracker that helps students manage job applications. I also integrated an AI-based feature where a student can upload their resume against a job description and receive feedback on how well the resume matches the role.
+
+Alongside development, I’ve solved 500-plus LeetCode problems and currently have a contest rating above 1600, which has strengthened my problem-solving and logical thinking.
+
+I’m currently looking for an opportunity where I can learn from experienced engineers, contribute to real-world projects, and grow into a stronger software and AI developer.
+
+Thank you.
+
+---
+
+## Projects -
+
+MINI PROJECT - lost and found (challenge - immaturely pushed .env secret that lead to phishing attacks on my mail) -- (i learnt the importance of secret info and .env file)
+
+working projects -
+1. MAJOR PROJECT -> (microservices arch + async comm. + each service scalable ) --> ride booking system
+2. real time scalable chat app - websocket ( redis - primary brochure + horizontal scaling + vertical scaling )
+
+---
+
+## Reply -
+1. what
+2. why
+3. how
 
 
 

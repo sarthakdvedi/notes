@@ -1,11 +1,18 @@
 ---
 
 ---
+## IMP NOTE -
+sliding window is only applicable if  --------> jab ek hi parameter h monotonically inc or dec.
 
-#### IMP NOTE -
-sliding window is only application if  --------> jab ek hi parameter h monotonically inc or dec.
+Sliding window is generally used when you have a specific constraint or target condition (e.g., _smallest subarray with sum $\ge K$_ or _maximum sum subarray of size $K$_).
 
-#### Think in these STEPS   (approach) -
+Without additional constraints (like a target sum or limited subarray length):
+
+- **Max sum with only positives** = Sum of the entire array.
+    
+- **Min sum with only positives** = Smallest single element in the array.
+
+## Think in these STEPS   (approach) -
 1. if Q is of fixed or dynamic window.  (SUPER IMP ...)
 2. if dynamic --->  follows which structure (min window or max window)
 3. 
@@ -48,23 +55,44 @@ int longestKSubstr(string &s, int k) {
 
 ```
 
+---
 
-### Two Structure (super imp***) -
-1. Max window (sum <= k)
+## Two Structure (super imp***) -
+
+### Max window (sum <= k)
    
    include j wala
    while(galat h) // trim
    sahi h -> //update  len = max(len, j-i+1);
 
-2. Min window (sum >= k)
-   
+
+---
+
+
+### Min window (sum >= k)   
+{ eg. [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) }
+
    include j wala
    while(sahi h) // trim + update  len = max(len, j-i+1);
    galat h -> // include j++
 
 
+```cpp
+while(j < n){
+	sum += nums[j]; // include
+
+	while(sum >= target){
+		ans = min(ans, j-i+1); // update best ans
+		sum -= nums[i++]; // trim to make min window
+	}
+	
+	j++; // condition invalid (as out of while) -- now move window
+}
+```
 
 
+
+---
 
 
 ### Revision important questions -
