@@ -3,10 +3,10 @@ https://share.google/aimode/G3RxtnGMu5hJg1FCN
 
 as i am fresher i do not have 
 ## Events sequence -
-1st year - basketball team + started solving dsa
-2nd year - lost and found (faced email security challenge)
-3rd year - mini project (team of 4) - real time chat app + summer internship (springboot certificate)
-4th year - ai project - using machine learning 
+1st year - basketball team + started solving dsa  
+2nd year - lost and found (faced email security challenge)  
+3rd year - mini project (team of 4) - real time chat app + summer internship (springboot certificate)  
+4th year - ai project - using machine learning  
 
 MAJOR PROJECT -
 currently working on building a AI model that works with KNN using an optimization technique kd- tree algorithm, that cuts the brute force linear matching pattern by utilizing a binary search approach.
