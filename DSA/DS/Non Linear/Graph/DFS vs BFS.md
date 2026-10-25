@@ -26,7 +26,7 @@ Core Differences
 
 When to Use Which
 
-- **Use BFS when:**
+- **==Use BFS when==:**
     - You need the shortest path between two points.
     - The target node is likely close to the starting point. 
 
